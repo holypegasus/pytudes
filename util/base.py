@@ -13,9 +13,11 @@ def get_logger():
   return logger
 log = get_logger().warning # quick default logging-function
 
-# hacky check Pandas w/o import
+# hacky check Pandas w/o relying on import
 def not_pd_struct(obj):
   return obj.__class__.__name__ not in ('Series','DataFrame')
+def lpd(obj): log('\n%s',obj)
+
 
 def logaz(opts='zs',logf=log):
   '''log function input/output
